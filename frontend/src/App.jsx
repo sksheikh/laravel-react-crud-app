@@ -1,7 +1,7 @@
 import { Link, Routes, Route } from "react-router-dom"
 
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Create from "./pages/Create";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
                 <Link className="nav-link active" to={"/"}>Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={"/about"}>About</Link>
+                <Link className="nav-link" to={"/create"}>Create</Link>
               </li>
             </ul>
           </div>
@@ -29,7 +29,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path={'/'} element={<Home />} />
-          <Route path={'/about'} element={<About />} />
+          <Route path={'/create'} element={<Create />} />
         </Routes>
       </div>
     </>

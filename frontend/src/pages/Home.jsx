@@ -16,8 +16,8 @@ export default function Home() {
 
   // console.log(users);
   return (
-    <div>
-      <h3>Home Page</h3>
+    <div className='py-4'>
+      <h3 className='mb-4 text-center'>All Users</h3>
       <table className='table table-bordered'>
         <thead>
           <tr>
