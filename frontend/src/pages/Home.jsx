@@ -3,9 +3,9 @@ import http from '../http'
 
 export default function Home() {
   const [users, setUsers] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     getAllUsers();
-  },[]);
+  }, []);
 
   const getAllUsers = () => {
     http.get('/users').then(res => {
@@ -28,11 +28,12 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user,index) => (
+          {
+            users.map((user, index) => (
               <tr key={user.id}>
-                <td>{ index }</td>
-                <td>{ user.name }</td>
-                <td>{ user.email }</td>
+                <td>{++index}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
                 <td className='d-flex justify-content-center gap-2'>
                   {/* Edit btn */}
                   <button type='button' className='btn btn-dark'>Edit</button>
@@ -41,7 +42,7 @@ export default function Home() {
                   <button type='button' className='btn btn-danger'>Delete</button>
                 </td>
               </tr>
-          ))
+            ))
           }
         </tbody>
       </table>
