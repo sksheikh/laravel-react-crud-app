@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import http from '../http'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -36,7 +37,7 @@ export default function Home() {
                 <td>{user.email}</td>
                 <td className='d-flex justify-content-center gap-2'>
                   {/* Edit btn */}
-                  <button type='button' className='btn btn-dark'>Edit</button>
+                  <Link className="btn btn-dark" to="">Edit</Link>
 
                   {/* Delete btn */}
                   <button type='button' className='btn btn-danger'>Delete</button>

@@ -12,8 +12,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        // dd('hello');
-        return response()->json(User::get());
+        $users = User::latest()->get();
+        return response()->json($users);
     }
 
     /**
@@ -29,7 +29,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ]);
+
+        return response()->json('user created successfully');
     }
 
     /**

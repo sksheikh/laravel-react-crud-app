@@ -19,7 +19,6 @@ export default function Create() {
     e.preventDefault();
     http.post('/users', inputs).then(res => {
       navigate('/');
-      console.log(res);
     })
     // console.log(inputs)
   }
