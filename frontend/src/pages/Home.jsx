@@ -15,6 +15,13 @@ export default function Home() {
 
   }
 
+  const deleteUser = (id) => {
+    http.delete('/users/' + id).then(res => {
+      getAllUsers();
+    })
+
+  }
+
   // console.log(users);
   return (
     <div className='py-4'>
@@ -40,7 +47,8 @@ export default function Home() {
                   <Link className="btn btn-dark" to={{pathname:"/edit/" + user.id}}>Edit</Link>
 
                   {/* Delete btn */}
-                  <button type='button' className='btn btn-danger'>Delete</button>
+                  <button type='button' className='btn btn-danger' 
+                    onClick={()=>{deleteUser(user.id)}}>Delete</button>
                 </td>
               </tr>
             ))

@@ -74,6 +74,7 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::whereId($id)->delete();
+        return response()->json('Deleted successfully');
     }
 }
